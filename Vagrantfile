@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  config.vm.box = ubuntu/xenial64"
+  config.vm.box = "ubuntu/xenial64"
   config.ssh.forward_agent = true
   config.ssh.insert_key = false
   config.hostmanager.enabled = true
