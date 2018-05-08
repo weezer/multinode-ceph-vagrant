@@ -2,8 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-  # We don't use ubuntu/xenial64 because of https://bugs.launchpad.net/cloud-images/+bug/1569237
-  config.vm.box = "bento/ubuntu-16.04"
+  config.vm.box = ubuntu/xenial64"
   config.ssh.forward_agent = true
   config.ssh.insert_key = false
   config.hostmanager.enabled = true
