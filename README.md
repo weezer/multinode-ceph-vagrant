@@ -260,6 +260,13 @@ vagrant@ceph-client:~$ sudo mkdir /mnt/ceph-block-device
 vagrant@ceph-client:~$ sudo mount /dev/rbd/rbd/foo /mnt/ceph-block-device
 ```
 
+### If you are using 3.13 kernel, you may see ceph failed: (5) Input/output error, you can try belowing cmd or upgrade to 3.15
+```
+ceph osd getcrushmap -o /tmp/crush
+crushtool -i /tmp/crush --set-chooseleaf_vary_r 0 -o /tmp/crush.new
+ceph osd setcrushmap -i /tmp/crush.new
+```
+
 ### Create a mount with Ceph FS
 
 TODO
